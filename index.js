@@ -57,4 +57,4 @@ const { viewDep, addDep } = require('./lib/department-methods');
 const { viewRoles, addRole } = require('./lib/roles-methods');
 const { addTotalByDep } = require('./lib/calculations');
 
-promptUser()
+promptUser();
