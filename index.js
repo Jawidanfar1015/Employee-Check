@@ -1,5 +1,29 @@
 const inquirer = require('inquirer');
 
+const connection = require("./config/connection");
+const express = require("express");
+const PORT = process.env.PORT || 3001;
+const app = express();
+
+// express middleware
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
+
+// Default response for any other request (Not found)
+app.use((req, res) => {
+  res.status(404).end();
+});
+
+// Start server after DB connection
+connection.connect(err => {
+  if (err) throw err;
+  console.log('Database connected.');
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+    promptUser();
+  });
+});
+
 // Inital Prompt - Main Menu
 const promptUser = () => {
     inquirer
@@ -57,4 +81,3 @@ const { viewDep, addDep } = require('./lib/department-methods');
 const { viewRoles, addRole } = require('./lib/roles-methods');
 const { addTotalByDep } = require('./lib/calculations');
 
-promptUser();

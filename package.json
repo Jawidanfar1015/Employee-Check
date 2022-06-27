@@ -1,0 +1,33 @@
+{
+  "name": "employee-check",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jawidanfar1015/Employee-Check.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jawidanfar1015/Employee-Check/issues"
+  },
+  "homepage": "https://github.com/Jawidanfar1015/Employee-Check#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.1",
+    "inquirer": "^7.3.3",
+    "mariadb": "^3.0.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.17.0"
+  }
+}

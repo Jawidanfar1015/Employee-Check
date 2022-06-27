@@ -1,5 +1,5 @@
 -- seeding the departments
-INSERT INTO departments (name)
+INSERT INTO department (name)
 VALUES ('Legal'),
     ('Sales'),
     ('Engineering');
@@ -14,7 +14,7 @@ VALUES ('Legal Team Lead', 250000, 1),
     ('Engineer', 120000, 3);
 
 -- seeding the employees
-INSERT INTO employees (first_name, last_name, role_id, manager_id, manager_confirm)
+INSERT INTO employee (first_name, last_name, role_id, manager_id, manager_confirm)
 VALUES ('Jerry', 'Underwood', 1, null, true),
     ('Bob', 'Sheldon', 2, 1, false),
     ('Jason', 'Mendoza', 2, 1, false),
@@ -30,5 +30,5 @@ VALUES ('Jerry', 'Underwood', 1, null, true),
 INSERT INTO manager (first_name, last_name)
 SELECT first_name,
     last_name
-FROM employees
+FROM employee
 WHERE manager_confirm = 1;
